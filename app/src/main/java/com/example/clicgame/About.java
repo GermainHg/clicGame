@@ -10,10 +10,7 @@ import android.widget.Button;
 
 public class About extends AppCompatActivity {
 
-
     private Button btnBack;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +19,10 @@ public class About extends AppCompatActivity {
 
         this.btnBack = (Button) findViewById(R.id.btn_BackAbout);
 
-
         //Bouton back
         btnBack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Settings.class));
+                finish();
             }
         });
     }

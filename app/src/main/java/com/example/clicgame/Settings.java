@@ -50,7 +50,7 @@ public class Settings extends AppCompatActivity {
         //Bouton Back
         btnBack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Back.class));
+                finish();
             }
         });
     }

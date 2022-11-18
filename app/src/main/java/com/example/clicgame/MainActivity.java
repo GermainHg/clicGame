@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         //Bouton Play
         btnPlay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Play.class));
+                startActivity(new Intent(getApplicationContext(), Username.class));
             }
         });
 

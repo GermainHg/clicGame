@@ -25,7 +25,6 @@ import java.util.Random;
 import java.net.URI;
 
 
-
 public class Play extends AppCompatActivity {
 
     ImageView imgBtnTarget;
@@ -83,7 +82,6 @@ public class Play extends AppCompatActivity {
         //return result;
     //}
 
-
     //get taille de l'écran en pixel
     public static int getScreenWidth() {
         return Resources.getSystem().getDisplayMetrics().widthPixels;
@@ -96,7 +94,6 @@ public class Play extends AppCompatActivity {
         final int random = new Random().nextInt(px) + 0; // nextInt((max-min)+1) + min
         return random;
     }
-
 
     private void startTimer() {
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
@@ -119,7 +116,7 @@ public class Play extends AppCompatActivity {
                 }
                 //RETOUR EN ARRIERE
                 else{
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Result.class));
                 }
             }
         }.start();
@@ -132,7 +129,4 @@ public class Play extends AppCompatActivity {
         String timeLeftFormatted = String.format(Locale.getDefault(), "Time : %02d", seconds);
         textTimer.setText(timeLeftFormatted);
     }
-
-
-
 }

@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/titleScore"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,6 +18,7 @@
 
     <TextView
         android:id="@+id/titleTimer"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,16 +26,47 @@
         app:layout_constraintTop_toBottomOf="@id/titleScore"
         />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="300px"
+        android:layout_height="300px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/img"
+        />
+
+    <TextView
+        android:id="@+id/tVEasterEgg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hyperlink"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+  <!-- <androidx.cardview.widget.CardView
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:cardCornerRadius="75dp"
+       app:layout_constraintBottom_toBottomOf = " parent "
+       app:layout_constraintEnd_toEndOf = " parent "
+       app:layout_constraintStart_toStartOf = " parent "
+       app:layout_constraintTop_toTopOf = " parent "
         >
-        <ImageButton
+
+       <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +76,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/cat2"
             android:background="@drawable/arrondir"
-        />
-    </androidx.cardview.widget.CardView>
+            />
+    </androidx.cardview.widget.CardView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

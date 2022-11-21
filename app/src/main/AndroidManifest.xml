@@ -13,6 +13,20 @@
         android:theme="@style/Theme.ClicGame"
         tools:targetApi="31">
         <activity
+            android:name=".Result"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Username"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Back"
             android:exported="false">
             <meta-data
@@ -56,13 +70,6 @@
         </activity>
         <activity
             android:name=".Records"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Play"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -29,7 +29,6 @@ public class Username extends AppCompatActivity {
 
         sp = getSharedPreferences("UserProfil", Context.MODE_PRIVATE);
 
-
         //Bouton GO
         btnGo.setOnClickListener(new View.OnClickListener() {
 
@@ -46,9 +45,9 @@ public class Username extends AppCompatActivity {
                         SharedPreferences.Editor editor = sp.edit();
                         editor.putString("name", name);
                         editor.commit();
-
+                        finish();
                         startActivity(new Intent(getApplicationContext(), Play.class));
-                }
+                    }
             }
 
         });

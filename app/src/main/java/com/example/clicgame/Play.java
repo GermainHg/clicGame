@@ -32,10 +32,9 @@ public class Play extends AppCompatActivity {
     ImageView imgBtnTarget;
     TextView textScore, textTimer, linkEasterEgg;
     int score = 0;
+    //int finalScore;
     private static final long timer = 30000;
-    int height, width, tailleX, tailleY;
-    int randomX;
-    int randomY;
+    int height, width;
     SharedPreferences sp;
     CountDownTimer mCountDownTimer;
     boolean mTimerRunning;
@@ -54,8 +53,6 @@ public class Play extends AppCompatActivity {
         startTimer();
         updateCountDownText();
 
-        //tailleX=getScreenWidth()/2;
-        //tailleY=getScreenHeight()/2;
         linkEasterEgg.setVisibility(View.INVISIBLE);
 
         sp = getSharedPreferences("UserProfil", Context.MODE_PRIVATE);
@@ -65,27 +62,14 @@ public class Play extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(Play.this, "+1", Toast.LENGTH_SHORT).show();
                 score++;
-
-                //randomX = random();
-                //randomY = random();
                 width = random(getScreenWidth()-300);
                 height = random(getScreenHeight()-400);
-                //width = getScreenWidth();
-                //height = getScreenHeight();
                 textScore.setText("Score : " + String.valueOf(score));
                 imgBtnTarget.setX(width);
                 imgBtnTarget.setY(height);
-                //random = new Random().nextInt(76) + 25;
-
             }
         });
     }
-
-    //public int percentage(int px, float rand){
-      //  float temp = (float) px;
-        //int result = Math.round(temp * rand/100);
-        //return result;
-    //}
 
     //get taille de l'écran en pixel
     public static int getScreenWidth() {
@@ -112,9 +96,6 @@ public class Play extends AppCompatActivity {
                 mTimerRunning = false;
                 //EasterEgg
                 if (score == 1){
-                    //line hypertext
-                    //linkEasterEgg.setX(tailleX);
-                    //linkEasterEgg.setY(tailleY);
                     linkEasterEgg.setVisibility(View.VISIBLE);
                     linkEasterEgg.setMovementMethod(LinkMovementMethod.getInstance());
                     //ajouter un bouton back
@@ -124,6 +105,8 @@ public class Play extends AppCompatActivity {
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putInt(getString(R.string.Party_Score), score);
                     editor.commit();
+
+                    finish();
                     startActivity(new Intent(getApplicationContext(), Result.class));
                 }
             }
@@ -132,7 +115,6 @@ public class Play extends AppCompatActivity {
     }
 
     private void updateCountDownText() {
-        //int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
         String timeLeftFormatted = String.format(Locale.getDefault(), "Time : %02d", seconds);
         textTimer.setText(timeLeftFormatted);

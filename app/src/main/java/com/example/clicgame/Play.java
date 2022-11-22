@@ -2,7 +2,9 @@ package com.example.clicgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -34,7 +36,7 @@ public class Play extends AppCompatActivity {
     int height, width, tailleX, tailleY;
     int randomX;
     int randomY;
-
+    SharedPreferences sp;
     CountDownTimer mCountDownTimer;
     boolean mTimerRunning;
     private long mTimeLeftInMillis = timer;
@@ -56,11 +58,14 @@ public class Play extends AppCompatActivity {
         //tailleY=getScreenHeight()/2;
         linkEasterEgg.setVisibility(View.INVISIBLE);
 
+        sp = getSharedPreferences("UserProfil", Context.MODE_PRIVATE);
+
         imgBtnTarget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Toast.makeText(Play.this, "+1", Toast.LENGTH_SHORT).show();
                 score++;
+
                 //randomX = random();
                 //randomY = random();
                 width = random(getScreenWidth()-300);
@@ -116,7 +121,10 @@ public class Play extends AppCompatActivity {
                 }
                 //RETOUR EN ARRIERE
                 else{
-                startActivity(new Intent(getApplicationContext(), Result.class));
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putInt(getString(R.string.Party_Score), score);
+                    editor.commit();
+                    startActivity(new Intent(getApplicationContext(), Result.class));
                 }
             }
         }.start();

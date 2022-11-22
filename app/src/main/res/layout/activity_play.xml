@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Play">
 
+
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/img"
+        />
+
     <TextView
         android:id="@+id/titleScore"
         android:textSize="20sp"
@@ -26,16 +38,7 @@
         app:layout_constraintTop_toBottomOf="@id/titleScore"
         />
 
-    <ImageView
-        android:id="@+id/imageButton"
-        android:layout_width="300px"
-        android:layout_height="300px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/img"
-        />
+
 
     <TextView
         android:id="@+id/tVEasterEgg"

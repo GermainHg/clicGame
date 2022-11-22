@@ -10,4 +10,6 @@
     <string name="hyperlink"><a href="https://www.tiktok.com/@frenchbulldogstuff.com/video/7166662898268359978?is_copy_url=1">Easter Egg</a></string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="Party_Score" />
+
 </resources>

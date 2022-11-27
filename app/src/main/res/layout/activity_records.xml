@@ -8,77 +8,27 @@
     tools:context=".Records">
 
   <TextView
-      android:id="@+id/top1"
-      android:textSize="20sp"
+      android:id="@+id/txtTopScore"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:textSize="20sp"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintStart_toEndOf="@id/txtTopName"
       app:layout_constraintTop_toTopOf="parent"
       />
+
   <TextView
-      android:id="@+id/top2"
-      android:textSize="20sp"
+      android:id="@+id/txtTopName"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      app:layout_constraintEnd_toEndOf="parent"
+      android:textSize="20sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/txtTopScore"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       />
-  <TextView
-      android:id="@+id/top3"
-      android:textSize="20sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      />
-  <TextView
-      android:id="@+id/top4"
-      android:textSize="20sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      />
-  <TextView
-      android:id="@+id/top5"
-      android:textSize="20sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      />
-  <TextView
-      android:id="@+id/top6"
-      android:textSize="20sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      />
-  <TextView
-      android:id="@+id/top7"
-      android:textSize="20sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      />
-  <TextView
-      android:id="@+id/top8"
-      android:textSize="20sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      />
+
 
 
   </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,4 +12,28 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="Party_Score" />
 
+    <string name="s1"></string>
+    <string name="s2"></string>
+    <string name="s3"></string>
+    <string name="s4"></string>
+    <string name="s5"></string>
+    <string name="s6"></string>
+    <string name="s7"></string>
+    <string name="s8"></string>
+    <string name="s9"></string>
+    <string name="s10"></string>
+    <string name="n1" />
+    <string name="n2" />
+    <string name="n3"/>
+    <string name="n4" />
+    <string name="n5" />
+    <string name="n6" />
+    <string name="n7" />
+    <string name="n8"/>
+    <string name="n9" />
+    <string name="n10" />
+
+
+
+
 </resources>

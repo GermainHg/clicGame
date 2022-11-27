@@ -119,4 +119,15 @@ public class Play extends AppCompatActivity {
         String timeLeftFormatted = String.format(Locale.getDefault(), "Time : %02d", seconds);
         textTimer.setText(timeLeftFormatted);
     }
+
+
+    // arret du timer qd play est quittée
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        mCountDownTimer.cancel();
+        Toast.makeText(this, "Game ended", Toast.LENGTH_SHORT).show();
+        //LogData("onDestroy Called");
+    }
 }

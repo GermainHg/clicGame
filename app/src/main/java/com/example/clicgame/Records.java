@@ -56,5 +56,9 @@ public class Records extends AppCompatActivity {
         for (int i = 0; i < tabName.length-1; i++) {
             topName.append(String.valueOf(tabName[i]) + "\n");
         }
+
+        SharedPreferences.Editor editor = sp.edit();
+        int score = sp.getInt(getString(R.string.Party_Score), 0);
+        editor.putInt("new", score );
     }
 }

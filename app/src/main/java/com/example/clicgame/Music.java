@@ -1,14 +1,24 @@
 package com.example.clicgame;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Music extends AppCompatActivity {
+
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +31,9 @@ public class Music extends AppCompatActivity {
 
         lv = (ListView) findViewById(R.id.listview_1);
         data = new ArrayList<>();
-        data.add("1. ");
-        data.add("2. ");
-        data.add("3. ");
+        data.add("doggo");
+        data.add("miss");
+        data.add("wut da dawg doin");
         data.add("4. ");
         data.add("5. ");
         data.add("6. ");
@@ -36,5 +46,29 @@ public class Music extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,  /* android standard layout for a single entry from list: just some text and just a horizontal separator */
                 data /* the List<T> contents */);
         lv.setAdapter(adapter);
+
+        /* listen to clicks on a view whose contents depend on an adapter. that's our case */
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+
+                // Show a Toast message on item  click
+                Toast.makeText(Music.this, "You clicked : " + data.get(pos), Toast.LENGTH_SHORT).show();
+
+                switch (data.get(pos)){
+                    case "doggo":
+                        MediaPlayer.create(Music.this, R.raw.pop).start();
+                        break;
+                    case "miss":
+                        MediaPlayer.create(Music.this, R.raw.miss).start();
+                        break;
+                    case "wut da dawg doin":
+                        MediaPlayer.create(Music.this, R.raw.wtgd).start();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
     }
 }

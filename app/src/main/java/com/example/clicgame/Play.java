@@ -44,6 +44,7 @@ public class Play extends AppCompatActivity {
     boolean mTimerRunning;
     private long mTimeLeftInMillis = timer;
     private long mTimeLeftInMillisInit = 4000;
+    boolean isOver = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +72,6 @@ public class Play extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                MediaPlayer.create(Play.this, R.raw.wtgd).start();
                 }
         });
 
@@ -157,41 +157,22 @@ public class Play extends AppCompatActivity {
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 textTimerInit.setVisibility(View.INVISIBLE);
                 startTimer();
-                mTimerRunning = false;
+                //cancel();
+                isOver = true;
             }
         }.start();
         mTimerRunning = true;
     }
-
 
     // arret du timer qd play est quittée
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
-        //mCountDownTimer.cancel();
         mCountDownTimerInit.cancel();
+        if(this.isFinishing() && isOver == true) mCountDownTimer.cancel();
         MediaPlayer.create(Play.this, R.raw.wtgd).start();
         Toast.makeText(this, "Game ended", Toast.LENGTH_SHORT).show();
         //LogData("onDestroy Called");
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        //LogData("onPause Called");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        //LogData("onResume Called");
-    }
-
-    /*void LogData(String data) {
-        Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
-        Log.d("TAG", data);
-    }*/
 }

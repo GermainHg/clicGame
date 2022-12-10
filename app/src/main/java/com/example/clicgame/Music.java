@@ -34,13 +34,7 @@ public class Music extends AppCompatActivity {
         data.add("doggo");
         data.add("miss");
         data.add("wut da dawg doin");
-        data.add("4. ");
-        data.add("5. ");
-        data.add("6. ");
-        data.add("7. ");
-        data.add("8. ");
-        data.add("9. ");
-        data.add("10. ");
+
         // https://developer.android.com/guide/topics/ui/declaring-layout#AdapterViews
         /* adapts an array of data of type List<T> of undetermined size. this is to further be used by a view */
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,  /* android standard layout for a single entry from list: just some text and just a horizontal separator */

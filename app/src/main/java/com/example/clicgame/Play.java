@@ -33,7 +33,7 @@ import java.net.URI;
 
 public class Play extends AppCompatActivity {
 
-    ImageView imgBtnTarget;
+    ImageView imgBtnTarget,imgUp;
     TextView textScore, textTimer, textTimerInit, linkEasterEgg;
     private Button btnBack;
     int score = 0;
@@ -52,6 +52,7 @@ public class Play extends AppCompatActivity {
         setContentView(R.layout.activity_play);
 
         imgBtnTarget = (ImageView) findViewById(R.id.imageButton);
+        imgUp = (ImageView) findViewById(R.id.Bg);
         textScore = findViewById(R.id.titleScore);
         textScore.setText("Score : " + String.valueOf(score));
         textTimerInit = findViewById(R.id.titleTimerInit);
@@ -86,6 +87,15 @@ public class Play extends AppCompatActivity {
                 textScore.setText("Score : " + String.valueOf(score));
                 imgBtnTarget.setX(width);
                 imgBtnTarget.setY(height);
+            }
+        });
+
+        imgUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score--;
+                textScore.setText("Score : " + String.valueOf(score));
+
             }
         });
     }

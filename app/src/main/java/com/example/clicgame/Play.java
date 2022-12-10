@@ -67,6 +67,28 @@ public class Play extends AppCompatActivity {
         btnBack.setVisibility(View.INVISIBLE);
 
         sp = getSharedPreferences("UserProfil", Context.MODE_PRIVATE);
+        int imgSkin = sp.getInt("skin",1);
+
+        switch(imgSkin) {
+            case 1:
+                imgBtnTarget.setImageResource(R.drawable.img);
+                break;
+            case 2:
+                imgBtnTarget.setImageResource(R.drawable.cat);
+                break;
+            case 3:
+                imgBtnTarget.setImageResource(R.drawable.cat2);
+                break;
+            case 4:
+                imgBtnTarget.setImageResource(R.drawable.etrhehjy);
+                break;
+            case 5:
+                imgBtnTarget.setImageResource(R.drawable.tk1);
+                break;
+            case 6:
+                imgBtnTarget.setImageResource(R.drawable.chat5);
+                break;
+        }
 
         //Bouton back eater egg
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +115,8 @@ public class Play extends AppCompatActivity {
         imgUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MediaPlayer.create(Play.this, R.raw.miss).start();
+
                 score--;
                 textScore.setText("Score : " + String.valueOf(score));
 

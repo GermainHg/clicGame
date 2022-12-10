@@ -6,8 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".Skin">
 
-    <ListView
-        android:id="@+id/listview_1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@id/img3"
+        app:layout_constraintEnd_toStartOf="@id/img2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/img"
+        />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@id/img4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/cat"
+        />
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@id/img5"
+        app:layout_constraintEnd_toStartOf="@id/img4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img1"
+        android:src="@drawable/cat2"
+        />
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@id/img6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img3"
+        app:layout_constraintTop_toBottomOf="@id/img2"
+        android:src="@drawable/etrhehjy"
+        />
+    <ImageView
+        android:id="@+id/img5"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img3"
+        android:src="@drawable/tk1"
+        />
+    <ImageView
+        android:id="@+id/img6"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img5"
+        app:layout_constraintTop_toBottomOf="@id/img4"
+        android:src="@drawable/chat5"
+        />
+    <Button
+        android:id="@+id/btn_Back"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/img5"
+        app:layout_constraintTop_toBottomOf="@id/img5"
+        android:text="Back"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

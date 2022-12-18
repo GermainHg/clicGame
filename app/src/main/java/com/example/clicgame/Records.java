@@ -15,10 +15,10 @@ public class Records extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records);
+
         TextView topScore, topName;
         topScore = findViewById(R.id.txtTopScore);
         topName = findViewById(R.id.txtTopName);
-
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("UserProfil", Context.MODE_PRIVATE);
 

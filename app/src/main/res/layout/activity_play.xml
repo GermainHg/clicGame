@@ -22,9 +22,10 @@
         android:id="@+id/Bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/white_bg"
+        android:src="@drawable/bg"
         />
 
     <ImageView
@@ -85,7 +86,9 @@
         app:layout_constraintTop_toBottomOf="@id/tVEasterEgg"
         />
 
-  <!-- <androidx.cardview.widget.CardView
+  <!-- TENTATIVE D'UN BOUTON EN CERCLE AVEC UNE CARDVIEW
+
+        <androidx.cardview.widget.CardView
         app:layout_constraintVertical_bias="0.8"
         app:layout_constraintHorizontal_bias="0.1"
         android:layout_width="150dp"

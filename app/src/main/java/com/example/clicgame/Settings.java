@@ -9,48 +9,51 @@ import android.widget.Button;
 
 public class Settings extends AppCompatActivity {
 
+    //Initialisation des objets
     private Button btnMusic;
     private Button btnSkin;
     private Button btnAbout;
     private Button btnBack;
 
-
-
+    //Actions a definir a la creation de l'activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //On associe la disposition du fichier xml avec l'activity
         setContentView(R.layout.activity_settings);
 
-        this.btnMusic = (Button) findViewById(R.id.btn_Music);
-        this.btnSkin = (Button) findViewById(R.id.btn_Skin);
-        this.btnAbout = (Button) findViewById(R.id.btn_About);
-        this.btnBack = (Button) findViewById(R.id.btn_Back);
+        //On associe l'objet bouton avec le bouton cree dans le fichier xml
+        this.btnMusic = findViewById(R.id.btn_Music);
+        this.btnSkin = findViewById(R.id.btn_Skin);
+        this.btnAbout = findViewById(R.id.btn_About);
+        this.btnBack = findViewById(R.id.btn_Back);
 
         //Bouton Music
         btnMusic.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Music.class));
+            public void onClick(View view) { //On definit l'action a realiser apres avoir appuie le bouton
+                startActivity(new Intent(getApplicationContext(), Music.class)); //On demarre une nouvelle activity
             }
         });
 
         //Bouton Skin
         btnSkin.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Skin.class));
+            public void onClick(View view) { //On definit l'action a realiser apres avoir appuie le bouton
+                startActivity(new Intent(getApplicationContext(), Skin.class)); //On demarre une nouvelle activity
             }
         });
 
         //Bouton About
         btnAbout.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), About.class));
+            public void onClick(View view) { //On definit l'action a realiser apres avoir appuie le bouton
+                startActivity(new Intent(getApplicationContext(), About.class)); //On demarre une nouvelle activity
             }
         });
 
         //Bouton Back
-        btnBack.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() { //On definit l'action a realiser apres avoir appuie le bouton
             public void onClick(View view) {
-                finish();
+                finish(); //Met fin a l'activity
             }
         });
     }

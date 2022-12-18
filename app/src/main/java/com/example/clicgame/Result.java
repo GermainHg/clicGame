@@ -15,9 +15,10 @@ import java.util.Arrays;
 
 public class Result extends AppCompatActivity {
 
+    //Initialisation des objets
     private Button btnBack, btnReplay;
 
-
+    //Actions a definir a la creation de l'activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class Result extends AppCompatActivity {
 
         TextView userName, scoreFinal;
 
+        //On associe les objets avec ceux qui ont ete cree dans le fichier xml
         userName = findViewById(R.id.txtUsername);
         scoreFinal = findViewById(R.id.txtScore);
         this.btnBack = (Button) findViewById(R.id.btn_Back);
@@ -72,17 +74,17 @@ public class Result extends AppCompatActivity {
 
 
         //Bouton back
-        btnBack.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() { //On definit l'action a realiser apres avoir appuie le bouton
             public void onClick(View view) {
-                finish();
+                finish(); //Met fin a l'activity
             }
         });
 
         //Bouton replay
-        btnReplay.setOnClickListener(new View.OnClickListener() {
+        btnReplay.setOnClickListener(new View.OnClickListener() { //On definit l'action a realiser apres avoir appuie le bouton
             public void onClick(View view) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), Username.class));
+                finish(); //Met fin a l'activity
+                startActivity(new Intent(getApplicationContext(), Username.class)); //On demarre une nouvelle activity
             }
         });
     }

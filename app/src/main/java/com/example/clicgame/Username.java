@@ -14,11 +14,13 @@ import android.widget.Toast;
 
 public class Username extends AppCompatActivity {
 
+    //Initialisation des objets
     private Button btnGo;
     EditText  edit_msg;
     SharedPreferences sp;
     String name;
 
+    //Actions a definir a la creation de l'activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +35,10 @@ public class Username extends AppCompatActivity {
         btnGo.setOnClickListener(new View.OnClickListener() {
 
             @Override
-                public void onClick (View view){
+                public void onClick (View view){ //On definit l'action a realiser apres avoir appuie le bouton
 
                     if (TextUtils.isEmpty(edit_msg.getText().toString())) {
-                        Toast.makeText(Username.this, "Please enter a username !", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Username.this, "Please enter a username !", Toast.LENGTH_SHORT).show(); // Show a Toast message on item  click
                     }
 
                     else {
@@ -45,8 +47,9 @@ public class Username extends AppCompatActivity {
                         SharedPreferences.Editor editor = sp.edit();
                         editor.putString("name", name);
                         editor.commit();
-                        finish();
-                        startActivity(new Intent(getApplicationContext(), Play.class));
+
+                        finish(); //Met fin a l'activity
+                        startActivity(new Intent(getApplicationContext(), Play.class)); //On demarre une nouvelle activity
                     }
             }
 

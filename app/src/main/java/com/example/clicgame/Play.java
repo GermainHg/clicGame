@@ -1,5 +1,5 @@
 package com.example.clicgame;
-
+//import des différentes bibliothèques necessaires au bon fonctionnement
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -34,18 +34,25 @@ import java.net.URI;
 public class Play extends AppCompatActivity {
 
     //Initialisation des variables
+    //IMAGES
     private ImageView imgBtnTarget,imgUp;
+    //ZONES DE TEXT
     private TextView textScore, textTimer, textTimerInit, linkEasterEgg;
+    //BOUTONS
     private Button btnBack;
+    //TIMER
     private static final long timer = 30000;
-    int score = 0;
-    int height, width;
-    SharedPreferences sp;
     CountDownTimer mCountDownTimer, mCountDownTimerInit;
+    SharedPreferences sp;
     boolean mTimerRunning;
     private long mTimeLeftInMillis = timer;
     private long mTimeLeftInMillisInit = 4000;
     boolean isOver = false;
+    //SCORE
+    int score = 0;
+    //POSITION
+    int height, width;
+
 
     //Actions a definir a la creation de l'activity
     @Override
@@ -55,7 +62,7 @@ public class Play extends AppCompatActivity {
         //On associe la disposition du fichier xml avec l'activity
         setContentView(R.layout.activity_play);
 
-        //On associe les objets avec ceux qui ont ete cree dans le fichier xml
+        //On associe les objets avec ceux qui ont ete cree dans le fichier xml de activity_play
         imgBtnTarget = (ImageView) findViewById(R.id.imageButton);
         imgUp = (ImageView) findViewById(R.id.Bg);
         textScore = findViewById(R.id.titleScore);
@@ -74,11 +81,13 @@ public class Play extends AppCompatActivity {
         linkEasterEgg.setVisibility(View.INVISIBLE);
         btnBack.setVisibility(View.INVISIBLE);
 
-        //On recupere le skin selectionne dans l'option Skin via les SharedPreferences
+        //On recupere le skin selectionné dans l'option Skin via les SharedPreferences
+        //Par défaut si le joueur n'a pas modifié son skin alors le skin sera img
+        //Nous ouvrons le shaared preferences sp et nous prenons la valeur se trouvant dans la variable "skin"
         sp = getSharedPreferences("UserProfil", Context.MODE_PRIVATE);
         int imgSkin = sp.getInt("skin",1);
 
-        //On definit le skin choisi par le joueur
+        //On definit l'image qui va seervir de bouton, le skin choisi par le joueur en passant en revu tous les choix possibles
         switch(imgSkin) {
             case 1:
                 imgBtnTarget.setImageResource(R.drawable.img);
@@ -112,25 +121,26 @@ public class Play extends AppCompatActivity {
         imgBtnTarget.setOnClickListener(new View.OnClickListener() { //On definit l'action a realiser apres avoir appuie l'image
             @Override
             public void onClick(View view) { //On definit l'action a realiser apres avoir appuie la cible
-                MediaPlayer.create(Play.this, R.raw.pop).start(); //Joue un fichier audio
+                MediaPlayer.create(Play.this, R.raw.pop).start(); //Joue un fichier audio "pop"
                 score++; //Incrementation du score
 
-                //On fait changer la position de l'image
+                //On fait changer la position de l'image de manière random par rapport à la taille du screen
+                //Le jeu s'adapte à toutes les tailles de supports
                 width = random(getScreenWidth()-300);
                 height = random(getScreenHeight()-400);
                 imgBtnTarget.setX(width);
                 imgBtnTarget.setY(height);
 
-                //Mise a jour le score
+                //Mise a jour le score en setant le text view du score
                 textScore.setText("Score : " + String.valueOf(score));
             }
         });
 
         //Image en arriere plan
-        imgUp.setOnClickListener(new View.OnClickListener() { //On definit l'action a realiser apres avoir appuie l'image
+        imgUp.setOnClickListener(new View.OnClickListener() { //On definit l'action a realiser apres avoir appuie l'image d'arrière plan
             @Override
             public void onClick(View view) { //On definit l'action a realiser apres avoir appuie sur l'arriere plan
-                MediaPlayer.create(Play.this, R.raw.miss).start(); //Joue un fichier audio
+                MediaPlayer.create(Play.this, R.raw.miss).start(); //Joue un fichier audio "miss"
                 score--; //Decrementation du score
 
                 //Mise a jour le score
@@ -185,16 +195,16 @@ public class Play extends AppCompatActivity {
                 mTimerRunning = false;
 
                 //EasterEgg
-                if (score == 1) {
-                    linkEasterEgg.setVisibility(View.VISIBLE);
+                if (score == 1) { //si le score est égal à 1
+                    linkEasterEgg.setVisibility(View.VISIBLE); //on rend le lien vivible
                     linkEasterEgg.setMovementMethod(LinkMovementMethod.getInstance()); //Lien cliquable
                     btnBack.setVisibility(View.VISIBLE); //Rend visible le bouton Back
                 }
 
-                else {
-                    SharedPreferences.Editor editor = sp.edit();
-                    editor.putInt(getString(R.string.Party_Score), score);
-                    editor.commit();
+                else { //sinon
+                    SharedPreferences.Editor editor = sp.edit(); //on rouvre le sharedPreferences
+                    editor.putInt(getString(R.string.Party_Score), score); //on met dans la R.string.Party_Score el résultat de la partie courante
+                    editor.commit(); //on "ferme" le shared Preferences
 
                     finish(); //Met fin a l'activity
                     startActivity(new Intent(getApplicationContext(), Result.class)); //On demarre une nouvelle activity

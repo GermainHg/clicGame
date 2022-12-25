@@ -1,5 +1,7 @@
 package com.example.clicgame;
-
+// Application réaliséé dans le cadre de l'unité [E4fe] 4E-LE1 IHM dévelopement d'une application Android
+// Auteur : LESTIENNE Raphaël / HENG Germain / GUIRAUDOU Tristan
+// Support : M.BENABOU
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -26,23 +28,25 @@ public class Username extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_username);
 
+        //On associe la disposition du fichier xml avec l'activity
         this.btnGo = (Button) findViewById(R.id.btn_Go);
         edit_msg = (EditText) findViewById(R.id.edit_msg);
 
+        // on "ouvre" un sp pour y sauvegarder ci-après le nom du joueur et pouvoir le réafficher une fois la partie finie
         sp = getSharedPreferences("UserProfil", Context.MODE_PRIVATE);
 
-        //Bouton GO
+        // Bouton GO
         btnGo.setOnClickListener(new View.OnClickListener() {
 
             @Override
                 public void onClick (View view){ //On definit l'action a realiser apres avoir appuie le bouton
 
-                    if (TextUtils.isEmpty(edit_msg.getText().toString())) {
+                    if (TextUtils.isEmpty(edit_msg.getText().toString())) { //si le joeur ne rentre pas de nom dans la barre dédiée il ne peut jouer et un toast se présente à lui pour lui signaler
                         Toast.makeText(Username.this, "Please enter a username !", Toast.LENGTH_SHORT).show(); // Show a Toast message on item  click
                     }
 
                     else {
-                        //get username + associer score
+                        // On enregistre dasn le sp le nom du joeur que l'utilisateur vient de rentrer dans la barre dédiée
                         name = edit_msg.getText().toString();
                         SharedPreferences.Editor editor = sp.edit();
                         editor.putString("name", name);

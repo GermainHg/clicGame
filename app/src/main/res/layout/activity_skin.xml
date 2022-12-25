@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Skin">
 
+    <!-- ImageView skin 1 -->
     <ImageView
         android:id="@+id/img1"
         android:layout_width="150dp"
@@ -18,6 +19,7 @@
         android:src="@drawable/img"
         />
 
+    <!-- ImageView skin 2 -->
     <ImageView
         android:id="@+id/img2"
         android:layout_width="150dp"
@@ -29,6 +31,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/cat"
         />
+
+    <!-- ImageView skin 3 -->
     <ImageView
         android:id="@+id/img3"
         android:layout_width="150dp"
@@ -40,6 +44,8 @@
         app:layout_constraintTop_toBottomOf="@id/img1"
         android:src="@drawable/cat2"
         />
+
+    <!-- ImageView skin 4 -->
     <ImageView
         android:id="@+id/img4"
         android:layout_width="150dp"
@@ -51,6 +57,8 @@
         app:layout_constraintTop_toBottomOf="@id/img2"
         android:src="@drawable/etrhehjy"
         />
+
+    <!-- ImageView skin 5 -->
     <ImageView
         android:id="@+id/img5"
         android:layout_width="150dp"
@@ -62,6 +70,8 @@
         app:layout_constraintTop_toBottomOf="@id/img3"
         android:src="@drawable/tk1"
         />
+
+    <!-- ImageView skin 6 -->
     <ImageView
         android:id="@+id/img6"
         android:layout_width="150dp"
@@ -73,6 +83,8 @@
         app:layout_constraintTop_toBottomOf="@id/img4"
         android:src="@drawable/chat5"
         />
+
+    <!-- Bouton back -->
     <Button
         android:id="@+id/btn_Back"
         android:layout_width="150dp"

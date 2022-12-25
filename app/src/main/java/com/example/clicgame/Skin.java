@@ -1,5 +1,7 @@
 package com.example.clicgame;
-
+// Application réaliséé dans le cadre de l'unité [E4fe] 4E-LE1 IHM dévelopement d'une application Android
+// Auteur : LESTIENNE Raphaël / HENG Germain / GUIRAUDOU Tristan
+// Support : M.BENABOU
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+// menu des skins jouables
+// on ambitionne de mettre ce menu en format gridview à l'avenir
 public class Skin extends AppCompatActivity {
 
     //Initialisation des objets
@@ -40,14 +44,16 @@ public class Skin extends AppCompatActivity {
         imgSkin6 = (ImageView) findViewById(R.id.img6);
         this.btnBack = (Button) findViewById(R.id.btn_Back);
 
+        //on "ouvre" le sharedPreferences "UserProfil"
         sp = getSharedPreferences("UserProfil", Context.MODE_PRIVATE);
 
+        //Algorithme primitif mais focntionel
         //Premier skin
         imgSkin1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { //On definit l'action a realiser apres avoir appuie sur l'item
                 String newSkin = img;
-
+                //on change la variable de skin qui est dans le shared preferences pour changer le skin en jeu
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("skin", 1 );
                 editor.commit();
@@ -61,7 +67,7 @@ public class Skin extends AppCompatActivity {
             @Override
             public void onClick(View view) { //On definit l'action a realiser apres avoir appuie sur l'item
                 String newSkin = cat;
-
+                //on change la variable de skin qui est dans le shared preferences pour changer le skin en jeu
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("skin", 2 );
                 editor.commit();
@@ -74,7 +80,7 @@ public class Skin extends AppCompatActivity {
             @Override
             public void onClick(View view) { //On definit l'action a realiser apres avoir appuie sur l'item
                 String newSkin = cat2;
-
+                //on change la variable de skin qui est dans le shared preferences pour changer le skin en jeu
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("skin", 3 );
                 editor.commit();
@@ -87,7 +93,7 @@ public class Skin extends AppCompatActivity {
             @Override
             public void onClick(View view) { //On definit l'action a realiser apres avoir appuie sur l'item
                 String newSkin = etrhehjy;
-
+                //on change la variable de skin qui est dans le shared preferences pour changer le skin en jeu
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("skin", 4 );
                 editor.commit();
@@ -100,7 +106,7 @@ public class Skin extends AppCompatActivity {
             @Override
             public void onClick(View view) { //On definit l'action a realiser apres avoir appuie sur l'item
                 String newSkin = tk1;
-
+                //on change la variable de skin qui est dans le shared preferences pour changer le skin en jeu
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("skin", 5 );
                 editor.commit();
@@ -113,7 +119,7 @@ public class Skin extends AppCompatActivity {
             @Override
             public void onClick(View view) { //On definit l'action a realiser apres avoir appuie sur l'item
                 String newSkin = chat5;
-
+                //on change la variable de skin qui est dans le shared preferences pour changer le skin en jeu
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("skin", 6 );
                 editor.commit();

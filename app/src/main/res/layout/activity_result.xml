@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Result">
 
+    <!-- Text qui affiche le nom du joeur qui vient de jouer -->
     <TextView
         android:id="@+id/txtUsername"
         android:layout_width="wrap_content"
@@ -17,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <!-- Text qui affiche le score de la partie qui vient d'être jouée -->
     <TextView
         android:id="@+id/txtScore"
         android:layout_width="wrap_content"
@@ -28,8 +30,7 @@
         app:layout_constraintTop_toBottomOf="@id/txtUsername"
         />
 
-
-
+    <!-- Bouton pour rejouer -->
     <Button
         android:id="@+id/btn_Retry"
         android:layout_width="wrap_content"
@@ -41,6 +42,7 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <!-- Bouton back -->
     <Button
         android:id="@+id/btn_Back"
         android:layout_width="wrap_content"

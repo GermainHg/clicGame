@@ -1,5 +1,7 @@
 package com.example.clicgame;
-
+// Application réaliséé dans le cadre de l'unité [E4fe] 4E-LE1 IHM dévelopement d'une application Android
+// Auteur : LESTIENNE Raphaël / HENG Germain / GUIRAUDOU Tristan
+// Support : M.BENABOU
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+//menu des settings de l'application
 public class Settings extends AppCompatActivity {
 
     //Initialisation des objets

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".About">
-
+    <!-- Text qui affiche nos noms et notre classe -->
     <TextView
         android:id="@+id/text_About"
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
-
+    <!-- Bouton back -->
     <Button
         android:id="@+id/btn_BackAbout"
         android:layout_width="wrap_content"

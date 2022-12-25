@@ -1,4 +1,8 @@
 package com.example.clicgame;
+// Application réaliséé dans le cadre de l'unité [E4fe] 4E-LE1 IHM dévelopement d'une application Android
+// Auteur : LESTIENNE Raphaël / HENG Germain / GUIRAUDOU Tristan
+// Support : M.BENABOU
+
 //import des différentes bibliothèques necessaires au bon fonctionnement
 import androidx.appcompat.app.AppCompatActivity;
 

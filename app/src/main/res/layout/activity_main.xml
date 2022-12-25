@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
+    <!-- Text qui affiche le titre du jeu -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <!-- Bouton Play -->
     <Button
         android:id="@+id/btn_Play"
         android:layout_width="100dp"
@@ -27,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-
+    <!-- Bouton Settings -->
     <Button
         android:id="@+id/btn_Settings"
         android:layout_width="wrap_content"
@@ -38,7 +39,7 @@
         app:layout_constraintStart_toEndOf="@id/btn_Records"
         app:layout_constraintTop_toTopOf="@id/btn_Play"
         />
-
+    <!-- Bouton Records -->
     <Button
         android:id="@+id/btn_Records"
         android:layout_width="wrap_content"

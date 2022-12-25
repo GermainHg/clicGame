@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Username">
 
+    <!-- Bouton go -->
     <Button
         android:id="@+id/btn_Go"
         android:layout_width="wrap_content"
@@ -16,6 +17,7 @@
         app:layout_constraintTop_toBottomOf="@id/edit_msg"
         />
 
+    <!-- Bouton pour entrer le suername -->
     <EditText
         android:id="@+id/edit_msg"
         android:layout_width="match_parent"
